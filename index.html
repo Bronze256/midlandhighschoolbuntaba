@@ -151,21 +151,55 @@
         
         /* Hero Section */
         .hero {
-            
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
+            position: relative;
+            height: 70vh;
             display: flex;
             align-items: center;
-            color: var(--white);
+            justify-content: center;
             text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            height: 100%;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            border-radius: 10px; /* Optional: Add rounded corners */
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
         }
 
         .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            width: 100%;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 1rem;
         }
 
         .hero h1 {
@@ -208,32 +242,6 @@
         .btn-outline:hover {
             background: var(--mhs-gold);
             color: var(--mhs-blue);
-        }
-
-        .hero-slideshow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .slide.active {
-            opacity: 1;
         }
 
         /* About Section */
@@ -653,17 +661,19 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-slideshow">
-            <div class="slide active" style="background-image: url('campus.jpg');"></div>
-            <div class="slide" style="background-image: url('ambulance.jpg');"></div>
-            <div class="slide" style="background-image: url('bus.jpg');"></div>
-        </div>
-        <div class="hero-content">
-            <h1>"Building brains with character"</h1>
-            <p>Midland High School Buntaba provides a holistic education that nurtures academic excellence, moral values, and personal development.</p>
-            <div class="hero-buttons">
-                <a href="admissions.html" class="btn">Apply Now</a>
-                <a href="tour.html" class="btn btn-outline">Schedule a Tour</a>
+        <div class="hero-container">
+            <div class="hero-slideshow">
+                <div class="slide active" style="background-image: url('campus.jpg');"></div>
+                <div class="slide" style="background-image: url('ambulance.jpg');"></div>
+                <div class="slide" style="background-image: url('bus.jpg');"></div>
+            </div>
+            <div class="hero-content">
+                <h1>"Building brains with character"</h1>
+                <p>Midland High School Buntaba provides a holistic education that nurtures academic excellence, moral values, and personal development.</p>
+                <div class="hero-buttons">
+                    <a href="admissions.html" class="btn">Apply Now</a>
+                    <a href="tour.html" class="btn btn-outline">Schedule a Tour</a>
+                </div>
             </div>
         </div>
     </section>
