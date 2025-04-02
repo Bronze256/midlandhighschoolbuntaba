@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Midland High School Mukono</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --mhs-blue: #003366;
+            --mhs-gold: #FFD700;
+            --mhs-red: #8B0000;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --white: #ffffff;
+        }
+
+        /* About-specific styles */
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('about-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .about-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--mhs-blue);
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--mhs-gold);
+            margin: 0.8rem auto 0;
+        }
+
+        .history-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .history-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .history-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .mission-vision {
+            background: var(--light-gray);
+            padding: 3rem 2rem;
+        }
+
+        .mv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .mv-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--mhs-gold);
+        }
+
+        .mv-icon {
+            font-size: 3rem;
+            color: var(--mhs-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .values-section {
+            background: var(--mhs-blue);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .values-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            color: var(--mhs-gold);
+            margin-bottom: 1rem;
+        }
+
+        .leadership-section {
+            padding: 3rem 2rem;
+        }
+
+        .leadership-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .leader-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .leader-image {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .leader-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .leader-info h3 {
+            color: var(--mhs-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-position {
+            color: var(--mhs-red);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .achievements-section {
+            background: var(--light-gray);
+            padding: 3rem 2rem;
+        }
+
+        .achievements-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--mhs-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .history-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .history-image {
+                order: -1;
+            }
+            
+            .about-hero {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Reuse header from main site -->
+    <header>
+        <!-- Your existing header content -->
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>Our Story</h1>
+            <p>Discover the rich heritage and values that make Midland High School Mukono unique</p>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="about-container">
+        <div class="about-section">
+            <div class="section-title">
+                <h2>Our History</h2>
+            </div>
+            
+            <div class="history-content">
+                <div class="history-text">
+                    <p>Founded in 1965 by a group of visionary educators, Midland High School Mukono began as a small secondary school with just 47 students and 5 teachers. Our founders believed in providing quality education that would develop both the mind and character of young Ugandans.</p>
+                    
+                    <p>Over the decades, we have grown into one of Uganda's most respected educational institutions, known for academic excellence and holistic development. The school moved to its current 25-acre campus in 1978, allowing for expansion of facilities and programs.</p>
+                    
+                    <p>Throughout our history, we have maintained our commitment to traditional values while embracing innovation in education. Our alumni network includes leaders in government, business, academia, and the arts across Uganda and beyond.</p>
+                    
+                    <p>Today, Midland High School Mukono serves over 1,200 students from diverse backgrounds, continuing our legacy of transforming lives through education.</p>
+                </div>
+                
+                <div class="history-image">
+                    <img src="old-school-photo.jpg" alt="Midland High School in the 1970s">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision">
+        <div class="mv-container">
+            <div class="mv-card">
+                <div class="mv-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To provide a transformative education that develops students intellectually, morally, and socially, preparing them to be responsible leaders and engaged citizens in a global society.</p>
+            </div>
+            
+            <div class="mv-card">
+                <div class="mv-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>To be Uganda's premier educational institution recognized for academic excellence, character development, and innovative learning that empowers students to reach their full potential.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="values-section">
+        <div class="values-container">
+            <div class="section-title">
+                <h2 style="color: var(--mhs-gold);">Our Core Values</h2>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We strive for the highest standards in all aspects of school life, encouraging students to achieve their personal best.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We uphold honesty, fairness, and ethical behavior in all our actions and relationships.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>We foster a supportive, inclusive environment where every member feels valued and respected.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We embrace creative thinking and new approaches to teaching and learning.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We are committed to environmental stewardship and responsible use of resources.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3>Patriotism</h3>
+                    <p>We nurture love for Uganda and commitment to national development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <div class="leadership-container">
+            <div class="section-title">
+                <h2>Our Leadership</h2>
+            </div>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="headteacher.jpg" alt="Headteacher">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Dr. Sarah Kintu</h3>
+                        <p class="leader-position">Headteacher</p>
+                        <p>With over 25 years in education, Dr. Kintu provides visionary leadership for our school community.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="deputy-head.jpg" alt="Deputy Headteacher">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Mr. James Lubega</h3>
+                        <p class="leader-position">Deputy Headteacher (Academics)</p>
+                        <p>Oversees curriculum development and instructional quality across all departments.</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="boarding-master.jpg" alt="Boarding Master">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Mrs. Grace Nalwoga</h3>
+                        <p class="leader-position">Deputy Headteacher (Administration)</p>
+                        <p>Manages school operations and student welfare programs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <div class="achievements-container">
+            <div class="section-title">
+                <h2>Our Achievements</h2>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">98%</div>
+                    <h3>UACE Pass Rate</h3>
+                    <p>Consistent top performance in national examinations</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">15+</div>
+                    <h3>National Awards</h3>
+                    <p>Recognized for excellence in academics and extracurriculars</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">1,200+</div>
+                    <h3>Current Students</h3>
+                    <p>Thriving community of learners</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-number">10,000+</div>
+                    <h3>Alumni Network</h3>
+                    <p>Graduates making impact worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reuse footer from main site -->
+    <footer>
+        <!-- Your existing footer content -->
+    </footer>
+</body>
+</html>
