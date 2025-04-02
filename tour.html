@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Tour | Midland High School Mukono</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reuse styles from your main CSS */
+        :root {
+            --mhs-blue: #003366;
+            --mhs-gold: #FFD700;
+            --mhs-red: #8B0000;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --white: #ffffff;
+        }
+
+        /* Add tour-specific styles */
+        .tour-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('campus-aerial.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .tour-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .tour-section {
+            margin-bottom: 3rem;
+        }
+
+        .virtual-tour {
+            background: var(--light-gray);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tour-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .tour-card-content {
+            padding: 1.5rem;
+        }
+
+        .tour-schedule {
+            background: var(--mhs-blue);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .schedule-table {
+            width: 100%;
+            margin-top: 2rem;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th, .schedule-table td {
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .schedule-table th {
+            background: var(--mhs-gold);
+            color: var(--mhs-blue);
+        }
+
+        .tour-cta {
+            text-align: center;
+            padding: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Reuse header from main site -->
+    <header>
+        <!-- Your existing header content -->
+    </header>
+
+    <!-- Tour Hero Section -->
+    <section class="tour-hero">
+        <div class="hero-content">
+            <h1>Explore Our Campus</h1>
+            <p>Discover the exceptional facilities and learning environment at Midland High School Mukono</p>
+        </div>
+    </section>
+
+    <!-- Virtual Tour Section -->
+    <section class="virtual-tour">
+        <div class="tour-container">
+            <h2 class="section-title">Virtual Campus Tour</h2>
+            <p>Can't visit in person? Take our virtual tour to explore our facilities from anywhere in the world.</p>
+            
+            <div class="video-container" style="margin: 2rem auto; max-width: 800px;">
+                <iframe width="100%" height="450" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Highlights -->
+    <section class="tour-container">
+        <div class="tour-section">
+            <h2 class="section-title">Campus Highlights</h2>
+            <div class="tour-grid">
+                <div class="tour-card">
+                    <img src="classrooms.jpg" alt="Modern Classrooms">
+                    <div class="tour-card-content">
+                        <h3>Modern Classrooms</h3>
+                        <p>Spacious, well-lit classrooms equipped with modern teaching aids and technology.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="library.jpg" alt="School Library">
+                    <div class="tour-card-content">
+                        <h3>Resource Center</h3>
+                        <p>Our extensive library with thousands of books, digital resources, and study spaces.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="science-lab.jpg" alt="Science Laboratories">
+                    <div class="tour-card-content">
+                        <h3>Science Labs</h3>
+                        <p>Fully equipped laboratories for Physics, Chemistry, and Biology practicals.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="sports-field.jpg" alt="Sports Facilities">
+                    <div class="tour-card-content">
+                        <h3>Sports Facilities</h3>
+                        <p>Football pitch, basketball court, volleyball court, and athletics track.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="dormitory.jpg" alt="Boarding Facilities">
+                    <div class="tour-card-content">
+                        <h3>Boarding Houses</h3>
+                        <p>Comfortable and secure dormitories with dedicated house parents.</p>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="dining-hall.jpg" alt="Dining Hall">
+                    <div class="tour-card-content">
+                        <h3>Dining Hall</h3>
+                        <p>Spacious dining area serving balanced, nutritious meals to students.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Schedule -->
+    <section class="tour-schedule">
+        <div class="tour-container">
+            <h2 class="section-title" style="color: var(--mhs-gold);">Schedule a Campus Visit</h2>
+            <p>We welcome prospective students and parents to visit our campus during the following times:</p>
+            
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Morning Session</th>
+                        <th>Afternoon Session</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday - Thursday</td>
+                        <td>9:00 AM - 11:00 AM</td>
+                        <td>2:00 PM - 4:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>9:00 AM - 11:00 AM</td>
+                        <td>1:00 PM - 3:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>10:00 AM - 12:00 PM</td>
+                        <td>Closed</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="tour-cta">
+                <p style="margin-bottom: 1.5rem;">To schedule your visit, please call our admissions office or fill out the form below.</p>
+                <a href="contact.html" class="btn">Contact Us</a>
+                <a href="admissions.html" class="btn btn-outline">Admissions Info</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reuse footer from main site -->
+    <footer>
+        <!-- Your existing footer content -->
+    </footer>
+</body>
+</html>

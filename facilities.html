@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Facilities | Midland High School Mukono</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reuse styles from your main CSS */
+        :root {
+            --mhs-blue: #003366;
+            --mhs-gold: #FFD700;
+            --mhs-red: #8B0000;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --white: #ffffff;
+        }
+
+        /* Facilities-specific styles */
+        .facilities-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('campus-wide-view.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .facilities-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .facility-category {
+            margin-bottom: 4rem;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .facility-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .facility-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .facility-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .facility-card:hover .facility-image img {
+            transform: scale(1.1);
+        }
+
+        .facility-content {
+            padding: 1.5rem;
+        }
+
+        .facility-content h3 {
+            color: var(--mhs-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .facility-content h3 i {
+            margin-right: 0.8rem;
+            color: var(--mhs-gold);
+        }
+
+        .sports-section {
+            background: var(--light-gray);
+            padding: 3rem 2rem;
+        }
+
+        .sports-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sport-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .sport-icon {
+            font-size: 2.5rem;
+            color: var(--mhs-gold);
+            margin-bottom: 1rem;
+        }
+
+        .tech-section {
+            background: var(--mhs-blue);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--mhs-gold);
+        }
+
+        .tech-item h3 {
+            color: var(--mhs-gold);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: var(--white);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Reuse header from main site -->
+    <header>
+        <!-- Your existing header content -->
+    </header>
+
+    <!-- Facilities Hero Section -->
+    <section class="facilities-hero">
+        <div class="hero-content">
+            <h1>World-Class Facilities</h1>
+            <p>Discover the exceptional learning environment at Midland High School Mukono</p>
+        </div>
+    </section>
+
+    <!-- Academic Facilities -->
+    <section class="facilities-container">
+        <div class="facility-category">
+            <h2 class="section-title">Academic Facilities</h2>
+            <p>Our state-of-the-art academic facilities provide the perfect environment for effective teaching and learning.</p>
+            
+            <div class="facility-grid">
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="classroom.jpg" alt="Modern Classroom">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-chalkboard"></i> Modern Classrooms</h3>
+                        <p>Spacious, well-lit classrooms equipped with smart boards, projectors, and ergonomic furniture to enhance the learning experience.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="library.jpg" alt="School Library">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-book"></i> Resource Center</h3>
+                        <p>Our extensive library houses over 15,000 volumes, digital resources, quiet study areas, and computer stations for research.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="science-lab.jpg" alt="Science Laboratory">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-flask"></i> Science Laboratories</h3>
+                        <p>Fully equipped laboratories for Physics, Chemistry, and Biology with modern equipment for practical experiments and research.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="computer-lab.jpg" alt="Computer Lab">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-laptop"></i> Computer Labs</h3>
+                        <p>Three modern computer labs with high-speed internet, latest software, and 1:1 student-computer ratio for ICT education.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="auditorium.jpg" alt="Auditorium">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-theater-masks"></i> Auditorium</h3>
+                        <p>500-seat multi-purpose auditorium with professional sound and lighting systems for assemblies, performances, and lectures.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="art-studio.jpg" alt="Art Studio">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-palette"></i> Creative Arts Studio</h3>
+                        <p>Dedicated spaces for visual arts, music, and drama with professional equipment and materials for creative expression.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Facilities -->
+    <section class="sports-section">
+        <div class="sports-container">
+            <h2 class="section-title">Sports & Recreation</h2>
+            <p>We believe in holistic development through physical education and competitive sports.</p>
+            
+            <div class="sports-grid">
+                <div class="sport-item">
+                    <div class="sport-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3>Football Pitch</h3>
+                    <p>Full-size football field with professional turf and seating for 300 spectators.</p>
+                </div>
+                
+                <div class="sport-item">
+                    <div class="sport-icon">
+                        <i class="fas fa-basketball-ball"></i>
+                    </div>
+                    <h3>Basketball Court</h3>
+                    <p>Two outdoor courts with floodlights for evening practice and competitions.</p>
+                </div>
+                
+                <div class="sport-item">
+                    <div class="sport-icon">
+                        <i class="fas fa-volleyball-ball"></i>
+                    </div>
+                    <h3>Volleyball Court</h3>
+                    <p>Professional standard sand court for beach volleyball training.</p>
+                </div>
+                
+                <div class="sport-item">
+                    <div class="sport-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Athletics Track</h3>
+                    <p>400m synthetic track for sprinting, hurdles, and long-distance running.</p>
+                </div>
+                
+                <div class="sport-item">
+                    <div class="sport-icon">
+                        <i class="fas fa-table-tennis"></i>
+                    </div>
+                    <h3>Indoor Games</h3>
+                    <p>Table tennis, chess, and board games in our recreation center.</p>
+                </div>
+                
+                <div class="sport-item">
+                    <div class="sport-icon">
+                        <i class="fas fa-swimmer"></i>
+                    </div>
+                    <h3>Swimming Pool</h3>
+                    <p>Olympic-size swimming pool with certified lifeguards and instructors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Facilities -->
+    <section class="tech-section">
+        <div class="tech-container">
+            <h2 class="section-title" style="color: var(--mhs-gold);">Technology & Innovation</h2>
+            <p>Preparing students for the digital future with cutting-edge technology resources.</p>
+            
+            <div class="tech-highlights">
+                <div class="tech-item">
+                    <h3>STEM Lab</h3>
+                    <p>Dedicated space for robotics, coding, and engineering projects with 3D printers and prototyping tools.</p>
+                </div>
+                
+                <div class="tech-item">
+                    <h3>Wi-Fi Campus</h3>
+                    <p>High-speed wireless internet coverage across the entire school for research and learning.</p>
+                </div>
+                
+                <div class="tech-item">
+                    <h3>Digital Library</h3>
+                    <p>Access to thousands of e-books, academic journals, and online learning platforms.</p>
+                </div>
+                
+                <div class="tech-item">
+                    <h3>Smart Classrooms</h3>
+                    <p>Interactive whiteboards and audio-visual equipment in all classrooms for enhanced learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boarding Facilities -->
+    <section class="facilities-container">
+        <div class="facility-category">
+            <h2 class="section-title">Boarding Facilities</h2>
+            <p>Safe, comfortable, and conducive residential facilities for our boarding students.</p>
+            
+            <div class="facility-grid">
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="dormitory.jpg" alt="Dormitory">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-bed"></i> Dormitories</h3>
+                        <p>Spacious dormitories with bunk beds, personal storage, and common areas. Separate houses for boys and girls.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="dining-hall.jpg" alt="Dining Hall">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-utensils"></i> Dining Hall</h3>
+                        <p>Modern dining facility serving balanced, nutritious meals prepared by professional catering staff.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="health-center.jpg" alt="Health Center">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-clinic-medical"></i> Health Center</h3>
+                        <p>Fully equipped medical facility with a full-time nurse and visiting doctor for student healthcare needs.</p>
+                    </div>
+                </div>
+                
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="counseling-center.jpg" alt="Counseling Center">
+                    </div>
+                    <div class="facility-content">
+                        <h3><i class="fas fa-heart"></i> Counseling Center</h3>
+                        <p>Professional counseling services for academic, career, and personal development guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Gallery -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <h2 class="section-title">Campus Gallery</h2>
+            <p>Explore our facilities through these images of daily life at Midland High School Mukono.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="gallery1.jpg" alt="Students in classroom">
+                    <div class="gallery-overlay">Interactive Learning</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery2.jpg" alt="Science experiment">
+                    <div class="gallery-overlay">Hands-on Science</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery3.jpg" alt="Football match">
+                    <div class="gallery-overlay">Sports Competition</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery4.jpg" alt="Library study">
+                    <div class="gallery-overlay">Quiet Study Time</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery5.jpg" alt="Art class">
+                    <div class="gallery-overlay">Creative Expression</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery6.jpg" alt="Dining hall">
+                    <div class="gallery-overlay">Meal Time</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery7.jpg" alt="Computer class">
+                    <div class="gallery-overlay">Technology Education</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery8.jpg" alt="Dormitory">
+                    <div class="gallery-overlay">Comfortable Dormitories</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reuse footer from main site -->
+    <footer>
+        <!-- Your existing footer content -->
+    </footer>
+
+    <script>
+        // Simple image gallery functionality could be added here
+        // For a more advanced gallery, consider using a library like Lightbox
+    </script>
+</body>
+</html>
