@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Midland High School Mukono</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --mhs-blue: #003366;
+            --mhs-gold: #FFD700;
+            --mhs-red: #8B0000;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --white: #ffffff;
+        }
+
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('contact-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            background: var(--mhs-gold);
+            color: var(--mhs-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            color: var(--mhs-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .map-container {
+            height: 400px;
+            margin-top: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-form {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background: var(--mhs-gold);
+            color: var(--mhs-blue);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--mhs-blue);
+            color: var(--white);
+        }
+
+        .departments-section {
+            background: var(--mhs-blue);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .departments-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .department-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--mhs-gold);
+        }
+
+        .department-card h3 {
+            color: var(--mhs-gold);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Reuse header from main site -->
+    <header>
+        <!-- Your existing header content -->
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1>Contact Our School</h1>
+            <p>We're here to answer your questions and welcome your feedback</p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2 class="section-title">Get In Touch</h2>
+                <p>We welcome inquiries from prospective students, parents, and partners. Our team is ready to assist you.</p>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Address</h3>
+                        <p>Midland High School Mukono<br>
+                        P.O. Box 123, Mukono<br>
+                        Uganda, East Africa</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p>Main Office: +256 712 345 678<br>
+                        Admissions: +256 712 345 679<br>
+                        Fax: +256 412 345 678</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>General Inquiries: info@midlandmukono.ac.ug<br>
+                        Admissions: admissions@midlandmukono.ac.ug<br>
+                        Alumni: alumni@midlandmukono.ac.ug</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Office Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
+                        Saturday: 9:00 AM - 1:00 PM<br>
+                        Sunday: Closed</p>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.647575061735!2d32.74592631526348!3d0.353599364056466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjEnMTMuMCJOIDMywrA0NCc1NC4xIkU!5e0!3m2!1sen!2sug!4v1620000000000!5m2!1sen!2sug" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2 class="section-title">Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="admissions">Admissions Inquiry</option>
+                            <option value="academics">Academic Programs</option>
+                            <option value="visits">School Visit</option>
+                            <option value="alumni">Alumni Relations</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments-section">
+        <div class="departments-container">
+            <h2 class="section-title" style="color: var(--mhs-gold);">Contact Specific Departments</h2>
+            <p>For more direct communication, you may contact these departments:</p>
+            
+            <div class="departments-grid">
+                <div class="department-card">
+                    <h3>Admissions Office</h3>
+                    <p>Email: admissions@midlandmukono.ac.ug<br>
+                    Phone: +256 712 345 679</p>
+                </div>
+                
+                <div class="department-card">
+                    <h3>Academic Office</h3>
+                    <p>Email: academics@midlandmukono.ac.ug<br>
+                    Phone: +256 712 345 680</p>
+                </div>
+                
+                <div class="department-card">
+                    <h3>Boarding Department</h3>
+                    <p>Email: boarding@midlandmukono.ac.ug<br>
+                    Phone: +256 712 345 681</p>
+                </div>
+                
+                <div class="department-card">
+                    <h3>Finance Office</h3>
+                    <p>Email: finance@midlandmukono.ac.ug<br>
+                    Phone: +256 712 345 682</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reuse footer from main site -->
+    <footer>
+        <!-- Your existing footer content -->
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will respond to you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
