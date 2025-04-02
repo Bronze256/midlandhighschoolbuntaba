@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Programs | Midland High School Mukono</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --mhs-blue: #003366;
+            --mhs-gold: #FFD700;
+            --mhs-red: #8B0000;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --white: #ffffff;
+        }
+
+        .academics-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('academics-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .academics-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .program-section {
+            margin-bottom: 4rem;
+        }
+
+        .program-tabs {
+            display: flex;
+            border-bottom: 2px solid var(--mhs-gold);
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark-gray);
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--mhs-blue);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--mhs-blue);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--mhs-gold);
+        }
+
+        .program-card h3 {
+            color: var(--mhs-blue);
+            margin-bottom: 1rem;
+        }
+
+        .curriculum-section {
+            background: var(--light-gray);
+            padding: 3rem 2rem;
+        }
+
+        .curriculum-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .curriculum-list {
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        .curriculum-list li {
+            margin-bottom: 0.8rem;
+            break-inside: avoid;
+        }
+
+        .faculty-section {
+            padding: 3rem 2rem;
+        }
+
+        .faculty-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .faculty-card {
+            text-align: center;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .faculty-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--mhs-gold);
+        }
+
+        .achievements-section {
+            background: var(--mhs-blue);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .achievements-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--mhs-gold);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .curriculum-list {
+                columns: 1;
+            }
+            
+            .program-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                flex: 1 0 auto;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Reuse header from main site -->
+    <header>
+        <!-- Your existing header content -->
+    </header>
+
+    <!-- Academics Hero Section -->
+    <section class="academics-hero">
+        <div class="hero-content">
+            <h1>Academic Excellence</h1>
+            <p>Rigorous programs designed to prepare students for university and beyond</p>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="academics-container">
+        <div class="program-section">
+            <h2 class="section-title">Our Academic Programs</h2>
+            
+            <div class="program-tabs">
+                <button class="tab-btn active" data-tab="ordinary-level">Ordinary Level</button>
+                <button class="tab-btn" data-tab="advanced-level">Advanced Level</button>
+                <button class="tab-btn" data-tab="vocational">Vocational</button>
+            </div>
+            
+            <div class="tab-content active" id="ordinary-level">
+                <div class="program-grid">
+                    <div class="program-card">
+                        <h3>Core Curriculum</h3>
+                        <p>All students take compulsory subjects including English, Mathematics, Biology, Chemistry, Physics, History, Geography, and Religious Education.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>Elective Options</h3>
+                        <p>Students can choose additional subjects from French, Literature in English, Computer Studies, Agriculture, and Commerce.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>Special Features</h3>
+                        <p>Enhanced STEM program with robotics club, science fairs, and annual innovation competitions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="advanced-level">
+                <div class="program-grid">
+                    <div class="program-card">
+                        <h3>Science Combination</h3>
+                        <p>Physics, Chemistry, Biology/Mathematics, Subsidiary ICT/Mathematics. Prepares students for engineering, medicine, and technology fields.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>Arts Combination</h3>
+                        <p>History, Economics, Geography/Literature, Subsidiary ICT/Mathematics. Ideal for law, business, and social sciences.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>Special Programs</h3>
+                        <p>University preparation workshops, career counseling, and research projects with local universities.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="vocational">
+                <div class="program-grid">
+                    <div class="program-card">
+                        <h3>Computer Science</h3>
+                        <p>Practical training in programming, web development, and computer maintenance with industry certifications.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>Business Education</h3>
+                        <p>Accounting, entrepreneurship, and business management with real-world case studies.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>Agricultural Science</h3>
+                        <p>Modern farming techniques, agribusiness management using our 5-acre school farm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum-section">
+        <div class="curriculum-container">
+            <h2 class="section-title">Curriculum Overview</h2>
+            <p>Our curriculum follows the Uganda National Curriculum but is enhanced with additional programs:</p>
+            
+            <ul class="curriculum-list">
+                <li>Uganda National Examination Board (UNEB) syllabus</li>
+                <li>Cambridge International AS & A Level options</li>
+                <li>STEM enrichment program</li>
+                <li>Leadership development curriculum</li>
+                <li>Digital literacy integration across all subjects</li>
+                <li>Entrepreneurship training</li>
+                <li>Environmental education</li>
+                <li>Career guidance program</li>
+                <li>Community service requirement</li>
+                <li>Creative arts program</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="faculty-section">
+        <div class="faculty-container">
+            <h2 class="section-title">Our Faculty</h2>
+            <p>Meet some of our distinguished faculty members:</p>
+            
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <img src="teacher1.jpg" alt="Dr. James Kato" class="faculty-img">
+                    <h3>Dr. James Kato</h3>
+                    <p>Head of Sciences<br>PhD in Chemistry, Makerere University</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="teacher2.jpg" alt="Ms. Sarah Nalwoga" class="faculty-img">
+                    <h3>Ms. Sarah Nalwoga</h3>
+                    <p>Head of Humanities<br>MA in Education, Kyambogo University</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="teacher3.jpg" alt="Mr. Robert Ssemakula" class="faculty-img">
+                    <h3>Mr. Robert Ssemakula</h3>
+                    <p>Vocational Studies Coordinator<br>BSc in Agricultural Engineering</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="teacher4.jpg" alt="Mrs. Grace Mbabazi" class="faculty-img">
+                    <h3>Mrs. Grace Mbabazi</h3>
+                    <p>Mathematics Department<br>15 years teaching experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <div class="achievements-container">
+            <h2 class="section-title" style="color: var(--mhs-gold);">Academic Achievements</h2>
+            
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>98% Pass Rate</h3>
+                    <p>2022 UACE Examination Results</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>15 Distinctions</h3>
+                    <p>National Science Olympiad 2023</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>85% University Admission</h3>
+                    <p>Of our graduates enter top universities</p>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Best School Award</h3>
+                    <p>Mukono District Academic Excellence 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reuse footer from main site -->
+    <footer>
+        <!-- Your existing footer content -->
+    </footer>
+
+    <script>
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
