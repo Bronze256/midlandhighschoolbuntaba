@@ -15,7 +15,7 @@
             --white: #ffffff;
         }
 
-        /* News page specific styles */
+        /* News-specific styles */
         .news-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('news-hero.jpg');
             background-size: cover;
@@ -34,31 +34,15 @@
             padding: 3rem 2rem;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--mhs-blue);
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--mhs-gold);
-            margin: 0.8rem auto 0;
+        .news-section {
+            margin-bottom: 4rem;
         }
 
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
         .news-card {
@@ -74,7 +58,7 @@
         }
 
         .news-image {
-            height: 250px;
+            height: 200px;
             overflow: hidden;
         }
 
@@ -86,40 +70,34 @@
         }
 
         .news-card:hover .news-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .news-content {
             padding: 1.5rem;
         }
 
-        .news-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
+        .news-date {
             color: var(--mhs-red);
             font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
         }
 
-        .news-category {
-            background: var(--mhs-gold);
-            color: var(--mhs-blue);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
+        .news-date i {
+            margin-right: 0.5rem;
         }
 
         .news-content h3 {
             color: var(--mhs-blue);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
 
         .news-excerpt {
+            margin-bottom: 1rem;
             color: var(--dark-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
         }
 
         .read-more {
@@ -149,45 +127,11 @@
             margin: 0 auto;
         }
 
-        .events-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .tab-button {
-            padding: 0.8rem 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--dark-gray);
-            position: relative;
-        }
-
-        .tab-button.active {
-            color: var(--mhs-blue);
-        }
-
-        .tab-button.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--mhs-gold);
-        }
-
-        .events-list {
-            display: none;
-        }
-
-        .events-list.active {
+        .events-calendar {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
         .event-card {
@@ -195,6 +139,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--mhs-gold);
         }
 
         .event-date {
@@ -220,6 +165,26 @@
             color: var(--mhs-gold);
             margin-right: 0.5rem;
             width: 20px;
+        }
+
+        .event-cta {
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--mhs-gold);
+            color: var(--mhs-blue);
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--mhs-blue);
+            color: var(--white);
         }
 
         .newsletter-section {
@@ -261,27 +226,40 @@
             background: var(--white);
         }
 
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 3rem;
+        .archive-section {
+            padding: 3rem 2rem;
         }
 
-        .page-link {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            margin: 0 0.3rem;
-            border: 1px solid #ddd;
+        .archive-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .archive-list {
+            margin-top: 2rem;
+        }
+
+        .archive-item {
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+        }
+
+        .archive-item a {
             color: var(--mhs-blue);
             text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .page-link:hover, .page-link.active {
-            background: var(--mhs-blue);
-            color: var(--white);
-            border-color: var(--mhs-blue);
+        .archive-item a:hover {
+            color: var(--mhs-red);
+        }
+
+        .archive-item span {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
@@ -314,144 +292,120 @@
     <!-- News Hero Section -->
     <section class="news-hero">
         <div class="hero-content">
-            <h1>School News & Events</h1>
+            <h1>News & Events</h1>
             <p>Stay updated with the latest happenings at Midland High School Mukono</p>
         </div>
     </section>
 
     <!-- Latest News Section -->
     <section class="news-container">
-        <div class="section-title">
-            <h2>Latest News</h2>
-        </div>
-        
-        <div class="news-grid">
-            <div class="news-card">
-                <div class="news-image">
-                    <img src="news1.jpg" alt="Science Competition Winners">
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span><i class="far fa-calendar-alt"></i> June 15, 2023</span>
-                        <span class="news-category">Achievements</span>
+        <div class="news-section">
+            <h2 class="section-title">Latest News</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="news-1.jpg" alt="Academic Excellence Awards">
                     </div>
-                    <h3>Midland Students Win National Science Competition</h3>
-                    <p class="news-excerpt">Our science team brought home three gold medals from the Uganda National Science Olympiad, showcasing the excellence of our STEM program.</p>
-                    <a href="news-science-competition.html" class="read-more">
-                        Read more <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> June 15, 2023
+                        </div>
+                        <h3> Top merit students have their trip to China</h3>
+                        <p class="news-excerpt">Out perfoming studennts in the national exams were given a fully paid trip to the different cities of china as a token of appreciation.</p>
+                        <a href="news-science-competition.html" class="read-more">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="news-2.jpg" alt="New Library">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> May 28, 2023
+                        </div>
+                        <h3>School Completes Digital Library Upgrade</h3>
+                        <p class="news-excerpt">The newly renovated resource center now features 20 computer stations and access to 10,000+ e-books.</p>
+                        <a href="news-library-upgrade.html" class="read-more">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="news-3.jpg" alt="Sports Day">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> April 10, 2023
+                        </div>
+                        <h3>Annual Sports Day Breaks Participation Records</h3>
+                        <p class="news-excerpt">Over 500 students competed in this year's inter-house athletics competition, with Green House emerging champions.</p>
+                        <a href="news-sports-day.html" class="read-more">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="news-4.jpg" alt="Alumni Visit">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> March 22, 2023
+                        </div>
+                        <h3>Notable Alumni Return for Career Guidance Week</h3>
+                        <p class="news-excerpt">Successful graduates shared their experiences and advice with current students during this special event.</p>
+                        <a href="news-alumni-visit.html" class="read-more">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="choir.jpg" alt="Music Competition">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> February 15, 2024
+                        </div>
+                        <h3>School Choir booms the country</h3>
+                        <p class="news-excerpt">Our talented choir is now one of the top high school choirs in the country.</p>
+                        <a href="news-choir-win.html" class="read-more">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="campus.jpg" alt="New Building">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i> January 30, 2023
+                        </div>
+                        <h3>Construction of the new block</h3>
+                        <p class="news-excerpt">The state-of-the-art facility  houses modern laboratories and additional classrooms.</p>
+                        <a href="news-science-block.html" class="read-more">
+                            Read more <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="news-card">
-                <div class="news-image">
-                    <img src="news2.jpg" alt="New Library">
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span><i class="far fa-calendar-alt"></i> May 28, 2023</span>
-                        <span class="news-category">Facilities</span>
-                    </div>
-                    <h3>Digital Library Upgrade Completed</h3>
-                    <p class="news-excerpt">The school has completed a major renovation of our resource center, now featuring 20 computer stations and access to over 10,000 e-books.</p>
-                    <a href="news-library-upgrade.html" class="read-more">
-                        Read more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card">
-                <div class="news-image">
-                    <img src="news3.jpg" alt="Sports Day">
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span><i class="far fa-calendar-alt"></i> April 10, 2023</span>
-                        <span class="news-category">Sports</span>
-                    </div>
-                    <h3>Record Participation at Annual Sports Day</h3>
-                    <p class="news-excerpt">Over 500 students competed in this year's inter-house athletics competition, with Green House emerging as overall champions.</p>
-                    <a href="news-sports-day.html" class="read-more">
-                        Read more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card">
-                <div class="news-image">
-                    <img src="news4.jpg" alt="Alumni Visit">
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span><i class="far fa-calendar-alt"></i> March 22, 2023</span>
-                        <span class="news-category">Alumni</span>
-                    </div>
-                    <h3>Successful Alumni Return for Career Week</h3>
-                    <p class="news-excerpt">Notable graduates from various professions shared their experiences and advice with current students during our annual Career Guidance Week.</p>
-                    <a href="news-alumni-visit.html" class="read-more">
-                        Read more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card">
-                <div class="news-image">
-                    <img src="news5.jpg" alt="Music Competition">
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span><i class="far fa-calendar-alt"></i> February 15, 2023</span>
-                        <span class="news-category">Arts</span>
-                    </div>
-                    <h3>School Choir Wins Regional Music Festival</h3>
-                    <p class="news-excerpt">Our talented choir received a standing ovation for their performance blending traditional Ugandan music with contemporary pieces.</p>
-                    <a href="news-choir-win.html" class="read-more">
-                        Read more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="news-card">
-                <div class="news-image">
-                    <img src="news6.jpg" alt="New Building">
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span><i class="far fa-calendar-alt"></i> January 30, 2023</span>
-                        <span class="news-category">Development</span>
-                    </div>
-                    <h3>Construction Begins on New Science Block</h3>
-                    <p class="news-excerpt">The groundbreaking ceremony marked the start of construction for our state-of-the-art science facility, scheduled for completion in 2024.</p>
-                    <a href="news-science-block.html" class="read-more">
-                        Read more <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="pagination">
-            <a href="#" class="page-link active">1</a>
-            <a href="#" class="page-link">2</a>
-            <a href="#" class="page-link">3</a>
-            <a href="#" class="page-link">4</a>
-            <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
         </div>
     </section>
 
-    <!-- Events Section -->
+    <!-- Upcoming Events Section -->
     <section class="events-section">
         <div class="events-container">
-            <div class="section-title">
-                <h2>Upcoming Events</h2>
-            </div>
-            
-            <div class="events-tabs">
-                <button class="tab-button active" data-tab="upcoming">Upcoming</button>
-                <button class="tab-button" data-tab="monthly">This Month</button>
-                <button class="tab-button" data-tab="term">Term Calendar</button>
-            </div>
-            
-            <div id="upcoming" class="events-list active">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-calendar">
                 <div class="event-card">
                     <div class="event-date">JUL 20, 2023</div>
                     <h3>Parents-Teachers Conference</h3>
@@ -459,10 +413,10 @@
                         <p><i class="fas fa-clock"></i> 9:00 AM - 3:00 PM</p>
                         <p><i class="fas fa-map-marker-alt"></i> School Auditorium</p>
                     </div>
-                    <p>Meet with teachers to discuss student progress and upcoming academic plans. All parents are encouraged to attend.</p>
-                    <a href="event-pt-conference.html" class="read-more">
-                        More details <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p>Meet with teachers to discuss student progress and upcoming academic plans.</p>
+                    <div class="event-cta">
+                        <a href="event-pt-conference.html" class="btn">Learn More</a>
+                    </div>
                 </div>
                 
                 <div class="event-card">
@@ -472,10 +426,10 @@
                         <p><i class="fas fa-clock"></i> All Day</p>
                         <p><i class="fas fa-map-marker-alt"></i> School Grounds</p>
                     </div>
-                    <p>Annual celebration of Uganda's diverse cultures through music, dance, drama, and food. Open to the public.</p>
-                    <a href="event-cultural-festival.html" class="read-more">
-                        More details <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p>Annual celebration of Uganda's diverse cultures through music, dance, and food.</p>
+                    <div class="event-cta">
+                        <a href="event-cultural-festival.html" class="btn">Learn More</a>
+                    </div>
                 </div>
                 
                 <div class="event-card">
@@ -485,19 +439,11 @@
                         <p><i class="fas fa-clock"></i> 10:00 AM - 4:00 PM</p>
                         <p><i class="fas fa-map-marker-alt"></i> Campus Wide</p>
                     </div>
-                    <p>Prospective students and parents invited to tour our facilities, meet staff, and learn about our programs.</p>
-                    <a href="event-open-day.html" class="read-more">
-                        More details <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p>Prospective students and parents invited to tour our facilities and meet staff.</p>
+                    <div class="event-cta">
+                        <a href="event-open-day.html" class="btn">Learn More</a>
+                    </div>
                 </div>
-            </div>
-            
-            <div id="monthly" class="events-list">
-                <!-- This month's events would be loaded here -->
-            </div>
-            
-            <div id="term" class="events-list">
-                <!-- Term calendar would be loaded here -->
             </div>
         </div>
     </section>
@@ -505,8 +451,8 @@
     <!-- Newsletter Section -->
     <section class="newsletter-section">
         <div class="newsletter-container">
-            <h2>Stay Informed</h2>
-            <p>Subscribe to our newsletter to receive the latest news and event updates directly to your email</p>
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter to receive the latest news and event announcements directly to your inbox.</p>
             <form class="newsletter-form">
                 <input type="email" placeholder="Enter your email address" required>
                 <button type="submit">Subscribe</button>
@@ -514,38 +460,51 @@
         </div>
     </section>
 
+    <!-- News Archive Section -->
+    <section class="archive-section">
+        <div class="archive-container">
+            <h2 class="section-title">News Archive</h2>
+            <div class="archive-list">
+                <div class="archive-item">
+                    <a href="news-item.html">
+                        School Launches New Robotics Club <span>December 10, 2022</span>
+                    </a>
+                </div>
+                <div class="archive-item">
+                    <a href="news-item.html">
+                        UACE Results: 100% Pass Rate <span>November 25, 2022</span>
+                    </a>
+                </div>
+                <div class="archive-item">
+                    <a href="news-item.html">
+                        Environmental Club Plants 500 Trees <span>October 15, 2022</span>
+                    </a>
+                </div>
+                <div class="archive-item">
+                    <a href="news-item.html">
+                        New Computer Lab Inauguration <span>September 5, 2022</span>
+                    </a>
+                </div>
+                <div class="archive-item">
+                    <a href="news-item.html">
+                        Midland Wins Debate Championship <span>August 20, 2022</span>
+                    </a>
+                </div>
+                <div class="archive-item">
+                    <a href="news-item.html">
+                        Alumni Donate New Science Equipment <span>July 8, 2022</span>
+                    </a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="news-archive.html" class="btn">View Full Archive</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Reuse footer from main site -->
     <footer>
         <!-- Your existing footer content -->
     </footer>
-
-    <script>
-        // Tab functionality
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const eventLists = document.querySelectorAll('.events-list');
-        
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and lists
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                eventLists.forEach(list => list.classList.remove('active'));
-                
-                // Add active class to clicked button
-                button.classList.add('active');
-                
-                // Show corresponding content
-                const tabId = button.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-        
-        // Newsletter form submission
-        const newsletterForm = document.querySelector('.newsletter-form');
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for subscribing to our newsletter!');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
