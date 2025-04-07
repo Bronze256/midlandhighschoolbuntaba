@@ -151,23 +151,14 @@
         
         /* Hero Section */
         .hero {
-             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('campus.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
+            position: relative;
+            height: 70vh; /* Increase height for better visibility */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white);
-        }
-
-        .hero-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            height: 100%;
+            overflow: hidden;
         }
 
         .hero-slideshow {
@@ -178,7 +169,6 @@
             height: 100%;
             z-index: -1;
             overflow: hidden;
-            border-radius: 10px; /* Optional: Add rounded corners */
         }
 
         .slide {
@@ -187,14 +177,26 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
+            background-size: cover; /* Ensures the image covers the entire container */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-position: center; /* Centers the image */
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
 
         .slide.active {
             opacity: 1;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); /* Gradient overlay */
+            z-index: 1;
         }
 
         .hero-content {
@@ -236,13 +238,35 @@
 
         .btn-outline {
             background: transparent;
-            color: var(--mhs-gold);
+            color: var (--mhs-gold);
             border: 2px solid var(--mhs-gold);
         }
 
         .btn-outline:hover {
             background: var(--mhs-gold);
             color: var(--mhs-blue);
+        }
+
+        .slideshow-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: var(--mhs-gold);
         }
 
         /* About Section */
@@ -401,7 +425,7 @@
         /* News Section */
         .news {
             padding: 5rem 2rem;
-            background: var(--light-gray);
+            background: var (--light-gray);
         }
 
         .news-grid {
@@ -439,7 +463,7 @@
         }
 
         .news-content h3 {
-            color: var(--mhs-blue);
+            color: var (--mhs-blue);
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
@@ -492,7 +516,7 @@
         }
 
         .footer-col ul li a:hover {
-            color: var(--mhs-gold);
+            color: var (--mhs-gold);
         }
 
         .contact-info {
@@ -620,7 +644,7 @@
         <div class="top-bar-container">
             <div class="quick-contact">
                 <span><i class="fas fa-phone"></i> +256 782 342 922 / +256 751 611 309</span>
-                <span><i class="fas fa-envelope"></i> midlandalumni12@gmail.com</span>
+                <span><i class="fas fa-envelope"></i> midlandhighschoolbuntaba@gmail.com</span>
             </div>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -664,9 +688,11 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-slideshow">
-                <div class="slide active" style="background-image: url('campus.jpg');"></div>
-                <div class="slide" style="background-image: url('ambulance.jpg');"></div>
-                <div class="slide" style="background-image: url('bus.jpg');"></div>
+                <div class="slide active" style="background-image: url('camp.jpg');"></div>
+                <div class="slide" style="background-image: url('cool.jpg');"></div>
+                <div class="slide" style="background-image: url('choir.jpg');"></div>
+                <div class="slide" style="background-image: url('students.jpg');"></div>
+                <div class="slide" style="background-image: url('choir.jpg');"></div>
             </div>
             <div class="hero-content">
                 <h1>"Building brains with character"</h1>
@@ -675,6 +701,12 @@
                     <a href="admissions.html" class="btn">Apply Now</a>
                     <a href="tour.html" class="btn btn-outline">Schedule a Tour</a>
                 </div>
+            </div>
+            <!-- Navigation Dots -->
+            <div class="slideshow-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
             </div>
         </div>
     </section>
@@ -736,7 +768,7 @@
             <div class="programs-grid">
                 <div class="program-card">
                     <div class="program-image">
-                        <img src="science-lab.jpg" alt="Science Program">
+                        <img src="science.jpg" alt="Science Program">
                     </div>
                     <div class="program-content">
                         <h3>Science Program</h3>
@@ -747,7 +779,7 @@
                 
                 <div class="program-card">
                     <div class="program-image">
-                        <img src="arts-class.jpg" alt="Arts Program">
+                        <img src="students.jpg" alt="Arts Program">
                     </div>
                     <div class="program-content">
                         <h3>Arts & Humanities</h3>
@@ -758,7 +790,7 @@
                 
                 <div class="program-card">
                     <div class="program-image">
-                        <img src="vocational.jpg" alt="Vocational Program">
+                        <img src="bakery.jpg" alt="Vocational Program">
                     </div>
                     <div class="program-content">
                         <h3>Vocational Studies</h3>
@@ -780,11 +812,11 @@
             <div class="news-grid">
                 <div class="news-card">
                     <div class="news-image">
-                        <img src="news1.jpg" alt="School News">
+                        <img src="football.jpg" alt="School News">
                     </div>
                     <div class="news-content">
-                        <div class="news-date">October 15, 2023</div>
-                        <h3>2023 Annual Sports Day Results</h3>
+                        <div class="news-date">October 15, 2024</div>
+                        <h3>2024 Annual Sports Day Results</h3>
                         <p>Our students showcased exceptional talent in various sports competitions.</p>
                         <a href="news-sports.html" class="btn">Read More</a>
                     </div>
@@ -795,7 +827,7 @@
                         <img src="ambulance.jpg" alt="School News">
                     </div>
                     <div class="news-content">
-                        <div class="news-date">October 5, 2023</div>
+                        <div class="news-date">October 5, 2024</div>
                         <h3>New School ambulance</h3>
                         <p>The school bought a new ambulance to ensure better health services at the school.</p>
                         <a href="news-computer-lab.html" class="btn">Read More</a>
@@ -804,17 +836,19 @@
                 
                 <div class="news-card">
                     <div class="news-image">
-                        <img src="IMG_20250119_220925.jpg" alt="School News">
+                        <img src="pathfinder.jpg" alt="School News">
                     </div>
                     <div class="news-content">
-                        <div class="news-date">September 28, 2023</div>
-                        <h3>Career Guidance Seminar</h3>
-                        <p>Successful professionals shared insights with our senior students.</p>
+                        <div class="news-date">September 28, 2024</div>
+                        <h3>Pathfinder induction</h3>
+                        <p>New students were welcomed into the pathfinder club.</p>
                         <a href="news-career.html" class="btn">Read More</a>
                     </div>
                 </div>
                 <div class="news-card">
                     <div class="news-image">
+                        <img src="alumni.jpg" alt="alumni">
+                    </div>
                     <div class="news-content">
                         <h3>A strong Alumni network</h3>
                         <p>Old students from different sectors always act as carrier coaches and help students in life at higher level</p>
@@ -904,15 +938,29 @@
 
         // Hero Slideshow
         const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
         let currentSlide = 0;
 
-        function showNextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                dots[i].classList.toggle('active', i === index);
+            });
+            currentSlide = index;
         }
 
-        setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+        function showNextSlide() {
+            const nextSlide = (currentSlide + 1) % slides.length;
+            showSlide(nextSlide);
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(showNextSlide, 5000);
+
+        // Add click event to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
     </script>
 </body>
 </html>
